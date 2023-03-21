@@ -1,16 +1,16 @@
 pipeline{
   agent any 
   tools {
-    maven "maven3.6.0"
+    maven "maven3.9"
   }  
   stages {
     stage('1GetCode'){
       steps{
         sh "echo 'cloning the latest application version' "
-        git branch: 'feature', credentialsId: 'gitHubCredentials', url: 'https://github.com/LandmakTechnology/maven-web-application'
+        git "https://github.com/georgeebeh/maven-web-app"
       }
     }
-    stage('3Test+Build'){
+    stage('2Test+Build'){
       steps{
         sh "echo 'running JUnit-test-cases' "
         sh "echo 'testing must passed to create artifacts ' "
