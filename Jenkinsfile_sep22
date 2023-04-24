@@ -1,5 +1,5 @@
 node{
-  def mavenHome = tool name: 'maven 3.8.6'
+  def mavenHome = tool name: 'maven 3.9'
   stage('1cloneCode'){
     git "https://github.com/LandmakTechnology/maven-web-application"
   }
